@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Samsung Galaxy Smartwatch</title>
+<style>
+    /* ======== RESET ======== */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', sans-serif;
+    }
+    body {
+        background: #0d0d0d;
+        color: white;
+        line-height: 1.6;
+    }
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+    img {
+        max-width: 100%;
+        display: block;
+    }
+
+    /* ======== NAVIGATION ======== */
+    nav {
+        position: sticky;
+        top: 0;
+        background: #111;
+        padding: 1rem 5%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+        z-index: 1000;
+    }
+    nav h1 {
+        font-size: 1.5rem;
+        color: #00bcd4;
+    }
+    nav ul {
+        display: flex;
+        gap: 1.5rem;
+    }
+    nav ul li {
+        list-style: none;
+    }
+    nav ul li a:hover {
+        color: #00bcd4;
+        transition: 0.3s;
+    }
+
+    /* ======== HERO SECTION ======== */
+    .hero {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        padding: 60px 5%;
+        background: linear-gradient(135deg, #000, #111);
+    }
+    .hero-text {
+        flex: 1 1 400px;
+        padding: 20px;
+    }
+    .hero-text h2 {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+        animation: fadeInUp 1s ease-in-out;
+    }
+    .hero-text p {
+        font-size: 1.1rem;
+        margin-bottom: 20px;
+        color: #ccc;
+    }
+    .cta-btn {
+        background: #00bcd4;
+        color: #fff;
+        padding: 12px 25px;
+        border: none;
+        border-radius: 25px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+    .cta-btn:hover {
+        background: #0097a7;
+        box-shadow: 0 5px 15px rgba(0,188,212,0.5);
+    }
+    .hero-img {
+        flex: 1 1 300px;
+        text-align: center;
+        animation: fadeIn 1.2s ease-in-out;
+    }
+    .hero-img img {
+        width: 300px;
+        border-radius: 50%;
+        box-shadow: 0 0 20px rgba(0,188,212,0.6);
+    }
+
+    /* ======== FEATURES ======== */
+    .features {
+        padding: 60px 5%;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        background: #111;
+    }
+    .feature-box {
+        background: #1a1a1a;
+        padding: 20px;
+        border-radius: 12px;
+        text-align: center;
+        transition: 0.3s;
+    }
+    .feature-box:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 5px 15px rgba(0,188,212,0.3);
+    }
+    .feature-box h3 {
+        margin: 15px 0;
+        color: #00bcd4;
+    }
+    .feature-box p {
+        color: #aaa;
+    }
+
+    /* ======== TESTIMONIALS ======== */
+    .testimonials {
+        padding: 60px 5%;
+        background: #0d0d0d;
+        text-align: center;
+    }
+    .testimonial-card {
+        background: #1a1a1a;
+        padding: 20px;
+        margin: 15px auto;
+        border-radius: 12px;
+        max-width: 500px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
+    .testimonial-card p {
+        font-style: italic;
+        color: #ccc;
+    }
+    .testimonial-card h4 {
+        margin-top: 10px;
+        color: #00bcd4;
+    }
+
+    /* ======== PRICING ======== */
+    .pricing {
+        padding: 60px 5%;
+        background: #111;
+        text-align: center;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+    }
+    .price-box {
+        background: #1a1a1a;
+        padding: 20px;
+        border-radius: 12px;
+        transition: 0.3s;
+    }
+    .price-box:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 5px 15px rgba(0,188,212,0.3);
+    }
+    .price-box h3 {
+        color: #00bcd4;
+        margin-bottom: 10px;
+    }
+    .price {
+        font-size: 2rem;
+        margin: 10px 0;
+        color: #fff;
+    }
+
+    /* ======== CONTACT ======== */
+    .contact {
+        padding: 60px 5%;
+        background: #0d0d0d;
+        text-align: center;
+    }
+    .contact input, .contact textarea {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border: none;
+        border-radius: 8px;
+        outline: none;
+    }
+    .contact button {
+        background: #00bcd4;
+        border: none;
+        padding: 12px 25px;
+        color: white;
+        border-radius: 25px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+    .contact button:hover {
+        background: #0097a7;
+        box-shadow: 0 5px 15px rgba(0,188,212,0.5);
+    }
+
+    /* ======== FOOTER ======== */
+    footer {
+        background: #111;
+        text-align: center;
+        padding: 20px;
+        color: #aaa;
+    }
+
+    /* ======== ANIMATIONS ======== */
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(40px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ======== RESPONSIVE ======== */
+    @media (max-width: 768px) {
+        .hero {
+            text-align: center;
+        }
+        .hero-img img {
+            width: 220px;
+        }
+    }
+</style>
+</head>
+<body>
+
+<!-- ======== NAVIGATION ======== -->
+<nav>
+    <h1>Galaxy Watch</h1>
+    <ul>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<!-- ======== HERO ======== -->
+<section class="hero">
+    <div class="hero-text">
+        <h2>Samsung Galaxy Smartwatch</h2>
+        <p>Stay connected, track your health, and look stylish with the Galaxy Smartwatch – your ultimate daily companion.</p>
+        <button class="cta-btn">Buy Now</button>
+    </div>
+    <div class="hero-img">
+        <img src="https://i.pinimg.com/1200x/42/00/88/420088a2f0f67a2ea9f2916eb9ab06b4.jpg" alt="Galaxy Watch">
+    </div>
+</section>
+
+<!-- ======== FEATURES ======== -->
+<section id="features" class="features">
+    <div class="feature-box">
+        <h3>Heart Rate Monitor</h3>
+        <p>Track your heart rate in real-time with precision sensors.</p>
+    </div>
+    <div class="feature-box">
+        <h3>GPS Navigation</h3>
+        <p>Never get lost with built-in GPS and location tracking.</p>
+    </div>
+    <div class="feature-box">
+        <h3>Water Resistant</h3>
+        <p>Swim-proof design with up to 50m water resistance.</p>
+    </div>
+    <div class="feature-box">
+        <h3>Long Battery Life</h3>
+        <p>Stay powered for days without frequent charging.</p>
+    </div>
+</section>
+
+<!-- ======== TESTIMONIALS ======== -->
+<section class="testimonials">
+    <div class="testimonial-card">
+        <p>"The Galaxy Watch is a game-changer for my workouts and daily routine."</p>
+        <h4>- Ayesha Khan</h4>
+    </div>
+    <div class="testimonial-card">
+        <p>"Stylish, smart, and packed with features. Highly recommended!"</p>
+        <h4>- Ali Raza</h4>
+    </div>
+</section>
+
+<!-- ======== PRICING ======== -->
+<section id="pricing" class="pricing">
+    <div class="price-box">
+        <h3>Basic</h3>
+        <p class="price">$199</p>
+        <p>Essential features and sleek design.</p>
+    </div>
+    <div class="price-box">
+        <h3>Pro</h3>
+        <p class="price">$299</p>
+        <p>Advanced health tracking and GPS.</p>
+    </div>
+    <div class="price-box">
+        <h3>Elite</h3>
+        <p class="price">$399</p>
+        <p>All features + premium accessories.</p>
+    </div>
+</section>
+
+<!-- ======== CONTACT ======== -->
+<section id="contact" class="contact">
+    <h2>Contact Us</h2>
+    <input type="text" placeholder="Your Name">
+    <input type="email" placeholder="Your Email">
+    <textarea rows="4" placeholder="Your Message"></textarea>
+    <button>Send Message</button>
+</section>
+
+<!-- ======== FOOTER ======== -->
+<footer>
+    <p>© 2025 Samsung Galaxy Watch | Follow us on 
+        <a href="#">Facebook</a> | <a href="#">Twitter</a> | <a href="#">Instagram</a>
+    </p>
+</footer>
+
+</body>
+</html>
